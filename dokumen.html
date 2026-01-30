@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinas Sosial Provinsi Papua Tengah</title>
+
+    <link rel="icon" type="image/png" href="images/logo-dinas-sosial-papua-tengah.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Colors */
+        .bg-gov-green {
+            background-color: #064e3b;
+        }
+
+        /* Hijau Tua Botol */
+        .text-gov-gold {
+            color: #b45309;
+        }
+
+        /* Gold/Amber */
+        .border-gov-gold {
+            border-color: #b45309;
+        }
+
+        .bg-gov-gold {
+            background-color: #b45309;
+        }
+
+        .bg-gov-red {
+            background-color: #991b1b;
+        }
+
+        /* Merah Marun */
+    </style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+    <div class="bg-gov-red h-1 w-full"></div>
+
+
+
+
+
+
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-100" x-data="{ openMobile: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <img class="h-14 w-auto" src="images/logo-dinas-sosial-papua-tengah.png" alt="Logo Papua Tengah">
+                    <div class="ml-3 border-l-2 border-gov-gold pl-3">
+                        <span class="block text-sm font-bold leading-tight uppercase text-gov-green">Dinas Sosial</span>
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest">Provinsi Papua
+                            Tengah</span>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6 text-[11px] font-bold uppercase tracking-widest">
+                    <a href="index.html" class="text-gov-green border-b-2 border-gov-gold py-1">Beranda</a>
+
+                    <div class="relative h-full flex items-center group" x-data="{ open: false }"
+                        @mouseenter="open = true" @mouseleave="open = false">
+                        <button class="flex items-center text-slate-600 group-hover:text-gov-gold transition py-1">
+                            Profil <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
+                        </button>
+                        <div x-show="open" x-transition
+                            class="absolute top-20 left-0 w-56 bg-white shadow-md border-t-2 border-gov-gold py-2 z-[60]">
+                            <a href="tugas-fungsi.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Tugas
+                                Pokok & Fungsi</a>
+                            <a href="visi-misi.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Visi
+                                & Misi</a>
+                            <a href="struktur-organisasi.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Struktur
+                                Organisasi</a>
+                            <a href="profil-pimpinan.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition">Profil
+                                Pimpinan</a>
+                        </div>
+                    </div>
+
+                    <div class="relative h-full flex items-center group" x-data="{ open: false }"
+                        @mouseenter="open = true" @mouseleave="open = false">
+                        <button class="flex items-center text-slate-600 group-hover:text-gov-gold transition py-1">
+                            Publikasi <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
+                        </button>
+                        <div x-show="open" x-transition
+                            class="absolute top-20 left-0 w-56 bg-white shadow-md border-t-2 border-gov-gold py-2 z-[60]">
+                            <a href="berita.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Berita</a>
+                            <a href="infografis.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Infografis</a>
+                            <a href="dokumen.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition border-b border-slate-50">Dokumen
+                                (Renstra/Renja)</a>
+                            <a href="ppid.html"
+                                class="block px-4 py-3 text-slate-700 hover:bg-slate-50 hover:text-gov-green transition">PPID</a>
+                        </div>
+                    </div>
+
+                    <a href="layanan.html" class="text-slate-600 hover:text-gov-gold transition">Layanan</a>
+                    <a href="pengaduan.html" class="text-slate-600 hover:text-gov-gold transition">Pengaduan</a>
+                    <a href="kontak.html"
+                        class="bg-gov-green text-white px-6 py-2.5 rounded-none hover:bg-gov-red transition shadow-sm border border-gov-green">Kontak</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button @click="openMobile = !openMobile" class="text-gov-green focus:outline-none">
+                        <i class="fa-solid" :class="openMobile ? 'fa-xmark' : 'fa-bars'"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="openMobile"
+            class="md:hidden bg-white border-t border-slate-100 shadow-lg overflow-y-auto max-h-screen pb-6">
+            <a href="index.html" class="block px-6 py-4 font-bold text-gov-green border-b border-slate-50">Beranda</a>
+
+            <div x-data="{ open: false }">
+                <button @click="open = !open"
+                    class="w-full flex justify-between items-center px-6 py-4 font-bold text-slate-700 border-b border-slate-50">
+                    Profil <i class="fa-solid fa-chevron-down text-[10px]" :class="open ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="open" class="bg-slate-50 text-sm">
+                    <a href="tugas-fungsi.html" class="block px-10 py-3 text-slate-600">Tugas Pokok & Fungsi</a>
+                    <a href="visi-misi.html" class="block px-10 py-3 text-slate-600">Visi & Misi</a>
+                    <a href="struktur-organisasi.html" class="block px-10 py-3 text-slate-600">Struktur Organisasi</a>
+                    <a href="profil-pimpinan.html" class="block px-10 py-3 text-slate-600">Profil Pimpinan</a>
+                </div>
+            </div>
+
+            <div x-data="{ open: false }">
+                <button @click="open = !open"
+                    class="w-full flex justify-between items-center px-6 py-4 font-bold text-slate-700 border-b border-slate-50">
+                    Publikasi <i class="fa-solid fa-chevron-down text-[10px]" :class="open ? 'rotate-180' : ''"></i>
+                </button>
+                <div x-show="open" class="bg-slate-50 text-sm">
+                    <a href="berita.html" class="block px-10 py-3 text-slate-600">Berita</a>
+                    <a href="infografis.html" class="block px-10 py-3 text-slate-600">Infografis</a>
+                    <a href="dokumen.html" class="block px-10 py-3 text-slate-600">Dokumen</a>
+                    <a href="ppid.html" class="block px-10 py-3 text-slate-600">PPID</a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="block px-6 py-4 font-bold text-slate-700 border-b border-slate-50">Layanan</a>
+            <a href="pengaduan.html"
+                class="block px-6 py-4 font-bold text-slate-700 border-b border-slate-50">Pengaduan</a>
+            <a href="kontak.html" class="block px-6 py-4 font-bold text-gov-red">Kontak</a>
+        </div>
+    </nav>
+
+
+
+
+    <!-- =========================== section start ========================== -->
+    <section class="py-12 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <nav class="flex mb-4 text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold">
+                <a href="index.html" class="hover:text-gov-gold transition">Beranda</a>
+                <span class="mx-2">/</span>
+                <span class="text-gov-green">Publikasi</span>
+                <span class="mx-2">/</span>
+                <span class="text-gov-green">Dokumen</span>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-black text-gov-green uppercase tracking-tighter">
+                Arsip & <span class="text-gov-red">Dokumen Publik</span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white" x-data="{ 
+    activeTab: 'semua'
+}">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button @click="activeTab = 'semua'"
+                    :class="activeTab === 'semua' ? 'bg-gov-green text-white border-gov-green' : 'bg-white text-slate-600 border-slate-200 hover:border-gov-gold'"
+                    class="px-8 py-3 border text-[10px] font-bold uppercase tracking-widest transition shadow-sm">Semua
+                    Dokumen</button>
+                <button @click="activeTab = 'renstra'"
+                    :class="activeTab === 'renstra' ? 'bg-gov-green text-white border-gov-green' : 'bg-white text-slate-600 border-slate-200 hover:border-gov-gold'"
+                    class="px-8 py-3 border text-[10px] font-bold uppercase tracking-widest transition shadow-sm">Renstra</button>
+                <button @click="activeTab = 'renja'"
+                    :class="activeTab === 'renja' ? 'bg-gov-green text-white border-gov-green' : 'bg-white text-slate-600 border-slate-200 hover:border-gov-gold'"
+                    class="px-8 py-3 border text-[10px] font-bold uppercase tracking-widest transition shadow-sm">Renja</button>
+                <button @click="activeTab = 'lainnya'"
+                    :class="activeTab === 'lainnya' ? 'bg-gov-green text-white border-gov-green' : 'bg-white text-slate-600 border-slate-200 hover:border-gov-gold'"
+                    class="px-8 py-3 border text-[10px] font-bold uppercase tracking-widest transition shadow-sm">Lainnya</button>
+            </div>
+
+            <div class="space-y-4">
+
+                <div class="group bg-white border border-slate-200 p-6 flex flex-col md:flex-row items-center justify-between transition-all hover:border-gov-gold hover:shadow-md"
+                    x-show="activeTab === 'semua' || activeTab === 'renstra'">
+                    <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                        <div class="flex-none w-14 h-14 bg-slate-100 flex items-center justify-center text-gov-red">
+                            <i class="fa-solid fa-file-pdf text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-black text-gov-gold uppercase tracking-widest">Renstra</span>
+                            <h3
+                                class="text-gov-green font-bold uppercase tracking-tight text-sm md:text-base group-hover:text-gov-red transition-colors">
+                                Rencana Strategis Dinas Sosial Tahun 2024-2029</h3>
+                            <p class="text-slate-400 text-[10px] mt-1 font-light uppercase tracking-widest">Diunggah: 15
+                                Januari 2026 | Ukuran: 2.4 MB</p>
+                        </div>
+                    </div>
+                    <a href="#" download
+                        class="w-full md:w-auto bg-gov-green text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-gov-red transition shadow-sm text-center">
+                        <i class="fa-solid fa-download mr-2"></i> Unduh PDF
+                    </a>
+                </div>
+
+                <div class="group bg-white border border-slate-200 p-6 flex flex-col md:flex-row items-center justify-between transition-all hover:border-gov-gold hover:shadow-md"
+                    x-show="activeTab === 'semua' || activeTab === 'renja'">
+                    <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                        <div class="flex-none w-14 h-14 bg-slate-100 flex items-center justify-center text-gov-red">
+                            <i class="fa-solid fa-file-pdf text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-black text-gov-gold uppercase tracking-widest">Renja</span>
+                            <h3
+                                class="text-gov-green font-bold uppercase tracking-tight text-sm md:text-base group-hover:text-gov-red transition-colors">
+                                Rencana Kerja Tahunan Dinas Sosial TA 2026</h3>
+                            <p class="text-slate-400 text-[10px] mt-1 font-light uppercase tracking-widest">Diunggah: 05
+                                Januari 2026 | Ukuran: 1.8 MB</p>
+                        </div>
+                    </div>
+                    <a href="#" download
+                        class="w-full md:w-auto bg-gov-green text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-gov-red transition shadow-sm text-center">
+                        <i class="fa-solid fa-download mr-2"></i> Unduh PDF
+                    </a>
+                </div>
+
+                <div class="group bg-white border border-slate-200 p-6 flex flex-col md:flex-row items-center justify-between transition-all hover:border-gov-gold hover:shadow-md"
+                    x-show="activeTab === 'semua' || activeTab === 'lainnya'">
+                    <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                        <div class="flex-none w-14 h-14 bg-slate-100 flex items-center justify-center text-gov-red">
+                            <i class="fa-solid fa-file-pdf text-3xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-black text-gov-gold uppercase tracking-widest">Lainnya</span>
+                            <h3
+                                class="text-gov-green font-bold uppercase tracking-tight text-sm md:text-base group-hover:text-gov-red transition-colors">
+                                Laporan Kinerja Instansi Pemerintah (LKjIP) 2025</h3>
+                            <p class="text-slate-400 text-[10px] mt-1 font-light uppercase tracking-widest">Diunggah: 20
+                                Desember 2025 | Ukuran: 3.1 MB</p>
+                        </div>
+                    </div>
+                    <a href="#" download
+                        class="w-full md:w-auto bg-gov-green text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-gov-red transition shadow-sm text-center">
+                        <i class="fa-solid fa-download mr-2"></i> Unduh PDF
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-16 flex items-center justify-center space-x-2">
+                <button
+                    class="w-10 h-10 flex items-center justify-center border border-slate-200 text-slate-400 hover:bg-gov-green hover:text-white transition"><i
+                        class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center border border-gov-gold bg-gov-gold text-white font-bold text-xs">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold text-xs">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center border border-slate-200 text-slate-400 hover:bg-gov-green hover:text-white transition"><i
+                        class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-gov-green p-8 text-white flex flex-col md:flex-row items-center justify-between shadow-sm">
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-gov-gold font-bold text-lg uppercase tracking-tight mb-2">Permohonan Informasi
+                        Publik</h4>
+                    <p class="text-sm font-light text-slate-200">Tidak menemukan dokumen yang Anda cari? Silakan ajukan
+                        permohonan informasi secara resmi.</p>
+                </div>
+                <a href="ppid.html"
+                    class="bg-gov-red text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-red-800 transition">Alur
+                    Permohonan PPID</a>
+            </div>
+        </div>
+    </section>
+    <!-- =========================== section end ========================== -->
+
+
+    <footer class="bg-gov-green text-slate-300 py-16 px-4 border-t-4 border-gov-gold">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+            <div class="col-span-1 md:col-span-1">
+                <img class="h-20 mb-6" src="images/logo-dinas-sosial-papua-tengah.png" alt="Logo">
+                <h4 class="text-white font-bold text-lg mb-2 uppercase tracking-tighter">Dinas Sosial</h4>
+                <p class="text-xs tracking-widest text-slate-400">Pemerintah Provinsi <br>Papua Tengah</p>
+            </div>
+
+            <div>
+                <h4 class="text-gov-gold font-bold mb-6 uppercase text-xs tracking-[0.2em]">Navigasi</h4>
+                <ul class="space-y-3 text-xs uppercase font-semibold">
+                    <li><a href="#" class="hover:text-white transition">Profil Instansi</a></li>
+                    <li><a href="#" class="hover:text-white transition">Program Kerja</a></li>
+                    <li><a href="#" class="hover:text-white transition">Data Statistik</a></li>
+                    <li><a href="#" class="hover:text-white transition">Transparansi</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gov-gold font-bold mb-6 uppercase text-xs tracking-[0.2em]">Hubungi Kami</h4>
+                <ul class="space-y-4 text-xs">
+                    <li class="flex items-start"><i class="fa-solid fa-location-dot mt-1 mr-3 text-gov-red"></i> Nabire,
+                        Papua Tengah</li>
+                    <li class="flex items-start"><i class="fa-solid fa-envelope mt-1 mr-3 text-gov-red"></i>
+                        info@dinsos.papuatengah.go.id</li>
+                    <li class="flex items-start"><i class="fa-solid fa-phone mt-1 mr-3 text-gov-red"></i> (0984) 1234567
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gov-gold font-bold mb-6 uppercase text-xs tracking-[0.2em]">Media Sosial</h4>
+                <div class="flex space-x-3">
+                    <a href="#"
+                        class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-gov-gold hover:text-white transition"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-gov-gold hover:text-white transition"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-gov-gold hover:text-white transition"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-gov-gold hover:text-white transition"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-slate-500">
+            <p>&copy; 2026 Pemerintah Provinsi Papua Tengah. Seluruh Hak Cipta Dilindungi.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
