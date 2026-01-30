@@ -50,6 +50,66 @@
 
 <body class="bg-white text-slate-800">
 
+    <!-- =========================== disclaimer info start ========================== -->
+    <div x-data="{ showPopup: false }" x-init="setTimeout(() => showPopup = true, 5000)" x-show="showPopup"
+        x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+        class="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm"
+        style="display: none;">
+        <div class="bg-white max-w-lg w-full relative border-t-8 border-gov-red shadow-2xl p-8 md:p-10">
+
+            <button @click="showPopup = false"
+                class="absolute top-4 right-4 text-slate-400 hover:text-gov-red transition-colors">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
+            <div class="flex items-center justify-between mb-8">
+                <img src="images/logo-nokensoft.png" alt="Logo Nokensoft"
+                    class="h-10 w-auto object-contain transition duration-300">
+                <div class="bg-gov-green text-white px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em]">
+                    Design Proposal
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-2xl font-black text-gov-green uppercase tracking-tighter leading-tight">
+                    Demo Perancangan & <br> Penawaran Website
+                </h3>
+
+                <p class="text-sm text-slate-600 leading-relaxed font-light">
+                    Website ini merupakan **template demo** perancangan dan penawaran desain website Dinas Sosial yang
+                    dikembangkan secara profesional oleh <a href="https://nokensoft.com" target="_blank"
+                        class="text-gov-red font-bold hover:underline">Nokensoft.com</a>.
+                </p>
+
+                <div class="bg-slate-50 border-l-4 border-gov-gold p-4 mt-6">
+                    <p class="text-[11px] text-slate-500 leading-relaxed italic">
+                        <span class="font-bold text-gov-green uppercase block mb-1 not-italic">Catatan Konten:</span>
+                        Seluruh isi konten (teks, gambar, dan data) pada website demo ini dibuat menggunakan kecerdasan
+                        buatan (AI) sebagai contoh visual awal. Data sesungguhnya akan disesuaikan pada tahap
+                        implementasi final.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                    &copy; 2026 Nokensoft.com
+                </div>
+                <button @click="showPopup = false"
+                    class="w-full sm:w-auto bg-gov-green text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-gov-red transition shadow-sm">
+                    Lanjutkan Melihat Demo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================== disclaimer info end ========================== -->
+    
+    
+
     <div class="bg-gov-red h-1 w-full"></div>
 
 
@@ -377,10 +437,22 @@
 
         <div
             class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-slate-500">
-            <p>&copy; 2026 Pemerintah Provinsi Papua Tengah. Seluruh Hak Cipta Dilindungi.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
-                <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+            <div class="text-center md:text-left">
+                <p>&copy; 2026 Pemerintah Provinsi Papua Tengah. Seluruh Hak Cipta Dilindungi.</p>
+                <div class="flex space-x-6 mt-2 justify-center md:justify-start">
+                    <a href="#" class="hover:text-white transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-white transition">Syarat & Ketentuan</a>
+                </div>
+            </div>
+
+            <div class="mt-8 md:mt-0 flex items-center bg-black/20 px-4 py-2 border border-white/5 shadow-inner">
+                <span class="mr-3 opacity-60 italic normal-case tracking-normal">Powered by</span>
+                <a href="https://nokensoft.com" target="_blank" class="flex items-center group transition-all">
+                    <img src="images/logo-nokensoft.png" alt="Nokensoft"
+                        class="h-5 mr-2 transition duration-300">
+                    <span class="font-black text-white group-hover:text-gov-gold transition">Nokensoft<span
+                            class="text-gov-red">.com</span></span>
+                </a>
             </div>
         </div>
     </footer>
